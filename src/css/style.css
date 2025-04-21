@@ -210,7 +210,7 @@ h1 {
 /* Id nombre */
 
 
-.id_nombre {
+.id_nombre, .ano {
 	height: 50px;
 	border-radius: 30px;
 	border: none;

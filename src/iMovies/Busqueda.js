@@ -8,7 +8,7 @@ function Busqueda() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
-  const [year, setYear] = useState('');
+  const [ano, setano] = useState('');
   const [type, setType] = useState('');
   const [totalResults, setTotalResults] = useState(0);
   const [page, setPage] = useState(1);
@@ -28,7 +28,7 @@ function Busqueda() {
       let url = `https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchTerm}&page=${pageNum}`;
       
       // Añadir filtros opcionales si están definidos
-      if (year) url += `&y=${year}`;
+      if (ano) url += `&y=${ano}`;
       if (type) url += `&type=${type}`;
       
       const response = await axios.get(url);
@@ -65,7 +65,7 @@ function Busqueda() {
 
   // Manejar cambio de página
   const handlePageChange = (newPage) => {
-    if (newPage > 0 && newPage <= Math.ceil(totalResults / 10)) {
+    if (newPage > 0 && newPage <= Math.ceil(totalResults / 12)) {
       setPage(newPage);
     }
   };
@@ -90,20 +90,20 @@ function Busqueda() {
           
           <div className="filters">
             <div className="filter-item">
-              <label htmlFor="year">Año:</label>
+             
               <input
-                id="year"
+                className="ano"
                 type="text"
-                placeholder="Ej: 2020"
-                value={year}
-                onChange={(e) => setYear(e.target.value)}
+                placeholder="Año"
+                value={ano}
+                onChange={(e) => setano(e.target.value)}
               />
             </div>
             
             <div className="filter-item">
-              <label htmlFor="type">Tipo:</label>
+          
               <select
-                id="type"
+                id="filtro"
                 value={type}
                 onChange={(e) => setType(e.target.value)}
               >
@@ -117,7 +117,6 @@ function Busqueda() {
         </form>
       </div>
       
-      {loading && <div className="loading">Cargando...</div>}
       
       {error && <div className="error-message">{error}</div>}
       
