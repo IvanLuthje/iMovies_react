@@ -1,0 +1,813 @@
+/* Reset de márgenes y padding */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "lato";
+	background-color: #f4f4f9;
+	color: #000000;
+}
+
+
+
+@font-face {
+	font-family: lato;
+	src: url(../fonts/Lato-Light.ttf);
+}
+
+/* Tags semanticos */
+
+header {
+	background-color: #080909;
+	padding: 10px 20px;
+}
+
+nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	background-color: #dd3e41;
+	width: 100%;
+	text-transform: uppercase;
+}
+
+
+nav ul {
+	list-style: none;
+	display: flex;
+	gap: 20px;
+}
+
+nav ul li {
+	padding: 5px 10px;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+nav ul li a:hover {
+	color: #000000;
+	opacity: 70%;
+}
+
+main {
+	padding: 20px;
+	min-height: 768px;
+	margin-left: 5%;
+}
+
+.main_comp {
+	background-color: #1f7042;
+	min-height: 1080px;
+}
+
+h2 {
+	color: #dd3e41;
+	font-size: 2rem;
+	margin-bottom: 10px;
+	font-family: 'Sansita';
+}
+
+hr{
+    width: 20%;
+    margin-left:40%;
+}
+
+
+
+/* Footer */
+footer {
+	background-color: #080909;
+	color: #FFFFFF;
+	text-align: center;
+	padding: 10px 0;
+	font-family: lato;
+}
+
+#inicio img {
+	width: 90%;
+	height: 500px;
+}
+
+/* aside */
+
+aside {
+	width: 15%;
+	float: right;
+	color: #00435f;
+}
+
+#favorites-list-resp {
+	display: none;
+}
+
+
+/* Estilo para el menú responsivo en pantallas pequeñas */
+.responsive {
+	display: none;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+
+/* Logo */
+
+.imagen img {
+	width: 7%;
+}
+
+
+.container {
+	text-align: center;
+	width: 80%;
+	margin: auto;
+}
+
+h1 {
+	font-size: 2.5em;
+	margin-bottom: 20px;
+}
+
+
+
+
+/* Sección de Pokémon */
+#movies-info,
+#cards-info,
+#historial-list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.pokemon {
+	text-align: center;
+}
+
+.pokemon img {
+	width: 100px;
+	height: 100px;
+}
+
+.pokemon h3 {
+	margin-top: 10px;
+	font-size: 1.2rem;
+}
+
+
+.imagen2 img {
+	border-radius: 10px;
+	text-align: center;
+	margin-top: 20px;
+	margin: 10px;
+	padding: 40px;
+	width: 40%;
+	box-shadow: 0 4px 8px #BBBBBB;
+	background-color: #FFFFFF;
+
+}
+
+
+/* Modal */
+
+#modal {
+	display: none;
+	position: fixed;
+	z-index: 5;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	font-family: "Lato", system-ui;
+	background-color: #00000055;
+}
+
+.modal-pokemon {
+	background-color: white;
+	margin: 50px auto;
+	padding: 20px;
+	width: 80%;
+	max-width: 800px;
+	border-radius: 10px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	position: relative;
+}
+
+.info img {
+	width: 30%;
+}
+
+.cerrar {
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+/* Id nombre */
+
+
+.id_nombre {
+	height: 50px;
+	border-radius: 30px;
+	border: none;
+	font-family: 'lato';
+	width: 75%;
+}
+
+
+
+/* Botones */
+
+.descripcion {
+	width: 50px;
+	height: 50px;
+	/* margin:-5%; */
+	border-radius: 50%;
+	background-color: #4aaaaa;
+	border: none;
+	/*! color: #ffffff; */
+}
+
+.descripcion:hover {
+	opacity: 70%;
+}
+
+.compartir {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #1f7042;
+	border: none;
+	color: #FFFFFF;
+}
+
+.compartir:hover {
+	opacity: 70%;
+}
+
+.enviar {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #24ab2c;
+	border: none;
+	color: #1f7042;
+}
+
+.enviar:hover {
+	opacity: 70%;
+}
+
+.vermas {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #24ab2c;
+	border: none;
+	color: #ffffff|;
+	margin-left: 44%;
+}
+
+.vermas:hover {
+	opacity: 70%;
+}
+
+.cancel {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #dd3e41;
+	border: none;
+	color: #1f7042;
+}
+
+.cancel:hover {
+	opacity: 70%;
+}
+
+.reset {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #ffa500;
+	border: none;
+	color: #1f7042;
+}
+
+.reset:hover {
+	opacity: 70%;
+}
+
+
+.favoritos {
+	width: 50px;
+	height: 50px;
+	/* margin:-5%; */
+	border-radius: 50%;
+	background-color: #faaaaa;
+	border: none;
+	/*! color: #ffffff; */
+}
+
+#alert-favoritos{
+	/* margin-left:30%; */
+}
+
+#alert-favoritos-pokedex{
+	margin-left:30%;
+	display:block;
+}
+
+.favoritos:hover {
+	opacity: 70%;
+}
+
+.boton_busqueda {
+	width: 50px;
+	height: 50px;
+	/* margin:-5%; */
+	border-radius: 50%;
+	background-color: #ffffff;
+	border: none;
+	/*! color: #ffffff; */
+}
+
+.boton_busqueda:hover {
+	opacity: 70%;
+}
+
+#eliminar {
+	width: 20px;
+	height: 20px;
+	border-radius: 30px;
+	background-color: #aaa319;
+	border: none;
+	color: #ffffff;
+}
+
+.movie-card #eliminar {
+	width: 50px;
+	height: 50px;
+	border-radius: 30px;
+	background-color: #ff0000;
+	border: none;
+	color: #ffffff;
+}
+
+#eliminar:hover {
+	opacity: 70%;
+}
+
+#eliminar-todos {
+	width: 100px;
+	height: 30px;
+	border-radius: 10px;
+	background-color: #ffa500;
+	border: none;
+	color: #ffffff;
+	/* margin:-0.7%; */
+}
+
+#eliminar-todos-resp {
+	width: 100px;
+	height: 30px;
+	border-radius: 10px;
+	background-color: #ffa500;
+	border: none;
+	color: #ffffff;
+	/* margin:-0.7%; */
+}
+
+#eliminar-todos:hover {
+	opacity: 70%;
+}
+
+#filtro,
+#tipo {
+	height: 50px;
+	border-radius: 30px 30px 30px 30px;
+	border: none;
+	font-family: 'lato';
+	margin-bottom: 0.1%;
+	width: 75%;
+}
+
+#tipo {
+	height: 50px;
+	border-radius: 30px 30px 30px 30px;
+	border: none;
+	font-family: 'lato';
+	margin-bottom: 0.1%;
+	width: 92%;
+}
+
+.icono_redes {
+	font-size: 20px;
+	color: #ffffff;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+
+/* Formulario */
+
+
+#email_receptor, #email_emisor {
+	margin-top: 0;
+	height: 26px;
+	border-radius: 30px;
+	border-style: solid;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: 'lato';
+}
+
+
+#subject {
+	margin-top: 0;
+	height: 26px;
+	border-radius: 30px;
+	border-style: solid;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: 'lato';
+}
+
+#comentario {
+	margin-top: 0;
+	height: 100px;
+	border-radius: 10px;
+	border-style: solid;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: 'lato';
+}
+
+
+/* pokemon cards */
+
+#films-info .movie-card {
+	border-radius: 10px;
+	text-align: center;
+	margin-top: 20px;
+	margin: 5px;
+	padding: 40px;
+	/* width: 30%; */
+	box-shadow: 0 4px 8px #BBBBBB;
+	margin-left:25%;
+	background-color: #FFFFFF;
+}
+
+.movie-card {
+	border-radius: 10px;
+	text-align: center;
+	margin-top: 20px;
+	margin: 5px;
+	padding: 40px;
+	width: 30%;
+	box-shadow: 0 4px 8px #BBBBBB;
+
+	background-color: #FFFFFF;
+}
+
+.movie-card img {
+	width: 100%;
+	height: auto;
+}
+
+/* .cards-container {
+	display: grid;
+	grid-template-columns: repeat(3, 30%);
+	gap: 20px;
+	padding: 20px;
+} */
+
+.card {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px #BBBBBB;
+	overflow: hidden;
+}
+
+.card img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+.card h3 {
+	font-size: 1.2em;
+	margin: 10px;
+}
+
+.card p {
+	font-size: 1em;
+	margin: 10px;
+}
+
+.card:hover {
+	opacity: 70%;
+}
+
+.movie-card:hover {
+	opacity: 70%;
+}
+
+
+
+
+#map {
+	height: 768px;
+	width: 100%;
+}
+
+
+
+/* Estilo Responsivo */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+aside {
+	width: 15%;
+	font-size: 12px;
+}
+
+h2{
+	font-size:25px;
+}
+
+/* Botones */
+
+.descripcion {
+	width: 40px;
+	height: 40px;
+
+	/*! color: #ffffff; */
+}
+
+.compartir {
+	width: 40px;
+	height: 40px;
+}
+
+.compartir:hover {
+	opacity: 70%;
+}
+
+.enviar {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #24ab2c;
+	border: none;
+	color: #1f7042;
+}
+
+.enviar:hover {
+	opacity: 70%;
+}
+
+.vermas {
+	width: 40px;
+	height: 40px;
+}
+
+.vermas:hover {
+	opacity: 70%;
+}
+
+.cancel {
+	width: 40px;
+	height: 40px;
+}
+
+.cancel:hover {
+	opacity: 70%;
+}
+
+.reset {
+	width: 40px;
+	height: 40px;
+}
+
+.reset:hover {
+	opacity: 70%;
+}
+
+.vermas{
+	margin-left: 44.4%;
+}
+
+.favoritos {
+	width: 40px;
+	height: 40px;
+
+}
+
+#alert-favoritos{
+	margin-left:30%;
+}
+
+.favoritos:hover {
+	opacity: 70%;
+}
+
+.boton_busqueda {
+	width: 50px;
+	height: 50px;
+	/* margin:-5%; */
+	border-radius: 50%;
+	background-color: #ffffff;
+	border: none;
+	/*! color: #ffffff; */
+}
+
+.boton_busqueda:hover {
+	opacity: 70%;
+}
+
+#eliminar {
+	width: 15px;
+	height: 15px;
+}
+
+.movie-card #eliminar {
+	width: 40px;
+	height: 40px;
+}
+
+#eliminar:hover {
+	opacity: 70%;
+}
+
+.movie-card{
+	padding:20px;
+}
+	
+}
+
+@media screen and (max-width: 768px) {
+
+	aside {
+		display: none;
+	}
+
+	nav ul {
+		display: none;
+		width: 100%;
+		text-align: center;
+		padding-top: 20px;
+	}
+	
+
+
+	nav ul li {
+		margin: 10px 0;
+	}
+
+	.responsive {
+		display: block;
+	}
+
+	nav.active ul {
+		display: block;
+	}
+
+	.pokemon-list {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#favorites-list-resp {
+		padding: 20px;
+	}
+
+	.vermas {
+		margin-left: 39%;
+    }
+
+
+
+	/* logo */
+
+	.imagen img {
+		width: 50%;
+		margin-left: 25%;
+	}
+
+	/* Botones */
+
+	.id_nombre {
+		width: 80%;
+	}
+
+	#inicio img {
+		width: 90%;
+		height: 300px;
+	}
+
+	#filtro {
+		width: 80%;
+	}
+
+	.cards-container {
+		grid-template-columns: repeat(2, 50%);
+	}
+
+	.movie-card {
+		border-radius: 10px;
+		text-align: center;
+		margin-top: 20px;
+		margin: 10px;
+		padding: 30px;
+		width: 40%;
+		box-shadow: 0 4px 8px #BBBBBB;
+		background-color: #FFFFFF;
+	}
+
+	#films-info .movie-card {
+		margin-left:0;
+		padding:10px;
+		box-shadow: 0 4px 8px #BBBBBB;
+		background-color: #FFFFFF;
+	}
+
+	#alert-favoritos-pokedex{
+		margin-left:0%;
+		display:block;
+	}
+
+	#favorites-list-resp{
+		display:block;
+	}
+
+	 #favorites-list{
+		 padding:10%;
+		 display:block;
+	 }
+
+
+
+}
+
+@media screen and (max-width: 640px) {
+
+	.movie-card {
+		width: 90%;
+		box-shadow: 0 4px 8px #BBBBBB;
+		background-color: #FFFFFF;
+	}
+
+
+	#tipo {
+		width: 100%;
+	}
+
+	.cards-container {
+		grid-template-columns: repeat(1, 100%);
+	}
+
+	#films-info .movie-card {
+		margin-left:0;
+		width:80%;
+	}
+    .vermas{
+		margin-left:41.7%;
+	}
+
+	#alert-favoritos-pokedex{
+		margin-left:10%;
+
+	}
+
+}
+
+@media screen and (max-width: 300px) {
+
+	.descripcion{
+		width: 25px;
+		height: 25px;
+	}
+
+	.compartir{
+		width: 25px;
+		height: 25px;
+	}
+
+	.favoritos{
+		width: 25px;
+		height: 25px;
+	}
+
+}
