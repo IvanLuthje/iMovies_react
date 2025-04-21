@@ -10,7 +10,7 @@ const Nav = (props) => {
         <div>
         <ul class="menu">
             <li><Link to="/">Inicio</Link></li>
-            <li><Link to="/">Busqueda</Link></li>
+            <li><Link to="/busqueda">Busqueda</Link></li>
             {/* <li><Link to="historial.html">Historial</Link></li> */}
             <li><Link to="/contacto">Contacto</Link></li>
             {/* <li><Link to="compartir.html">Compartir</Link></li> */}

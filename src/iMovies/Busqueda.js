@@ -15,8 +15,7 @@ function Busqueda() {
 
   // API Key de OMDb - normalmente deberías almacenar esto en variables de entorno
   // La API key gratuita de OMDb permite hasta 1000 solicitudes diarias
-  const API_KEY = '4526760c'; // Reemplazar con tu propia API key
-
+  const API_KEY = '4526760c'; 
   // Función para buscar películas
   const searchMovies = async (pageNum = 1) => {
     if (!searchTerm) return;
@@ -161,7 +160,7 @@ function MovieCard({ movie }) {
   const [details, setDetails] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
 
-  const API_KEY = '3e7707e3'; // Reemplazar con tu propia API key
+  const API_KEY = '4526760c'; // Reemplazar con tu propia API key
 
   // Función para obtener detalles de una película
   const fetchMovieDetails = async () => {
@@ -183,17 +182,19 @@ function MovieCard({ movie }) {
     setShowDetails(!showDetails);
   };
 
+
+
   return (
     <div className="movie-card" onClick={handleCardClick}>
       {movie.Poster && movie.Poster !== 'N/A' ? (
         <img src={movie.Poster} alt={movie.Title} className="movie-poster" />
       ) : (
-        <div className="no-poster">Sin imagen</div>
+        <div className="no-poster"><img src={require('../img/Image-not-found.png')}></img></div>
       )}
       
       <div className="movie-info">
         <h2>{movie.Title}</h2>
-        <p>{movie.Year} • {movie.Type}</p>
+        <p>{movie.Year} {movie.Type}</p>
         
         {showDetails && details && (
           <div className="movie-details">

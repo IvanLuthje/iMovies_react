@@ -149,19 +149,7 @@ h1 {
 	flex-wrap: wrap;
 }
 
-.pokemon {
-	text-align: center;
-}
 
-.pokemon img {
-	width: 100px;
-	height: 100px;
-}
-
-.pokemon h3 {
-	margin-top: 10px;
-	font-size: 1.2rem;
-}
 
 
 .imagen2 img {
@@ -174,6 +162,10 @@ h1 {
 	box-shadow: 0 4px 8px #BBBBBB;
 	background-color: #FFFFFF;
 
+}
+
+.app-container{
+	min-height: 720px;
 }
 
 
