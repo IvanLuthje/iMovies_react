@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import menuBar from './menuBar';
 import '../../css/style.css'
 
+
+
+
 const Nav = (props) => {
+
 
   
     return(
@@ -14,7 +19,7 @@ const Nav = (props) => {
             {/* <li><Link to="historial.html">Historial</Link></li> */}
             <li><Link to="/contacto">Contacto</Link></li>
             {/* <li><Link to="compartir.html">Compartir</Link></li> */}
-            <div class="responsive" onclick="menuBar()">
+            <div className="responsive" onclick={menuBar}>
             &#9776;
             </div>
         </ul>
@@ -22,6 +27,8 @@ const Nav = (props) => {
       </nav>
     
     );
+
+    
 }
 
 export default Nav;

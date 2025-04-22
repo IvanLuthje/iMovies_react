@@ -5,7 +5,6 @@ import axios from 'axios';
 function Busqueda() {
   // Estados para almacenar los datos
   const [movies, setMovies] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [ano, setano] = useState('');
@@ -13,14 +12,13 @@ function Busqueda() {
   const [totalResults, setTotalResults] = useState(0);
   const [page, setPage] = useState(1);
 
-  // API Key de OMDb - normalmente deberías almacenar esto en variables de entorno
-  // La API key gratuita de OMDb permite hasta 1000 solicitudes diarias
+
   const API_KEY = '4526760c'; 
   // Función para buscar películas
   const searchMovies = async (pageNum = 1) => {
     if (!searchTerm) return;
     
-    setLoading(true);
+
     setError(null);
     
     try {
@@ -46,7 +44,6 @@ function Busqueda() {
       console.error('Error:', err);
     }
     
-    setLoading(false);
   };
 
   // Efecto para realizar la búsqueda cuando cambie la página
@@ -174,7 +171,7 @@ function MovieCard({ movie }) {
   };
 
   // Manejar clic en la tarjeta para mostrar más detalles
-  const handleCardClick = () => {
+  const descripcion = () => {
     if (!details) {
       fetchMovieDetails();
     }
@@ -184,7 +181,7 @@ function MovieCard({ movie }) {
 
 
   return (
-    <div className="movie-card" onClick={handleCardClick}>
+    <div className="movie-card" onClick={descripcion}>
       {movie.Poster && movie.Poster !== 'N/A' ? (
         <img src={movie.Poster} alt={movie.Title} className="movie-poster" />
       ) : (
