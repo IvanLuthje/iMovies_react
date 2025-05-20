@@ -13,6 +13,7 @@ const Nav = (props) => {
             <li><Link to="/busqueda">Busqueda</Link></li>
             {/* <li><Link to="historial.html">Historial</Link></li> */}
             <li><Link to="/contacto">Contacto</Link></li>
+            <li><Link to="/compartir">Compartir</Link></li>
             {/* <li><Link to="compartir.html">Compartir</Link></li> */}
             <div class="responsive" onclick="menuBar()">
             &#9776;

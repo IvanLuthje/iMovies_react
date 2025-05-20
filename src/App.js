@@ -4,7 +4,7 @@ import Nav from "./components/layout/Nav";
 import Contacto from "./iMovies/Contacto";
 import Footer from "./components/layout/Footer";
 import Busqueda from "./iMovies/Busqueda";
-
+import Compartir from "./iMovies/Compartir";
 function App(){
     return(
       <div className="App">
@@ -17,7 +17,7 @@ function App(){
       
           <Route path="/busqueda" exact element={ <Busqueda />}> </Route>
           <Route path="/contacto" exact element={ <Contacto />}> </Route>
-  
+          <Route path="/compartir" exact element={ <Compartir />}> </Route>
   
         </Routes>
   
