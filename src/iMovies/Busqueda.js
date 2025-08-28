@@ -132,7 +132,7 @@ export default function Buscador() {
 
       <h3>Historial</h3>
       {historial.length ? (
-        <div className="historial-grid">
+        <div className="movies-info">
           {historial.map((h) => (
             <MovieCard
               key={h.imdbID}

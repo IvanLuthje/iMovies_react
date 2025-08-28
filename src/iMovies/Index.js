@@ -14,7 +14,6 @@ export default function MoviesApp() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // 🔹 Cargar películas del año con Axios
   useEffect(() => {
     const fetchMovies = async () => {
       setLoading(true);
@@ -91,7 +90,7 @@ export default function MoviesApp() {
       {loading && <p><i className="fa-solid fa-spinner"></i> Cargando...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
 
-      <div className="movies-grid">
+      <div className="movies-info">
         {movies.map((movie) => (
           <MovieCard
             key={movie.imdbID}

@@ -430,7 +430,7 @@ h1 {
 	opacity: 70%;
 }
 
-#eliminar {
+.eliminar {
 	color: #aaaaaa;
 	float: right;
 	font-size: 28px;
@@ -936,7 +936,7 @@ h1 {
 		background-color: #FFFFFF;
 	}
 
-	#favorites-list {
+	.favorites-list {
 		display: block;
 	}
 
