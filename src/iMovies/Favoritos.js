@@ -97,54 +97,23 @@ export default function Buscador() {
   return (
     <div>
 
-
-      <div className="search-bar">
-        <input
-          type="text"
-          placeholder="Escribe un título..."
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <select value={filter} onChange={(e) => setFilter(e.target.value)}>
-          <option value="movie">Película</option>
-          <option value="series">Serie</option>
-          <option value="episode">Episodio</option>
-        </select>
-        <button onClick={handleSearch}>Buscar</button>
-      </div>
-
-      {loading && <p><i className="fa-solid fa-spinner"></i> Cargando...</p>}
-      {message && <p>{message}</p>}
-
-      <h3>Resultados</h3>
-      <div className="movies-info">
-        {results.map((movie) => (
-          <MovieCard
-            key={movie.imdbID}
-            movie={movie}
-            onDetails={() => viewDetails(movie.imdbID)}
-            onFavorite={() => addToFavorites(movie)}
-            onHistorial={() => addToHistorial(movie)}
-          />
-        ))}
-      </div>
-
-
-      <h3>Historial</h3>
-      {historial.length ? (
-        <div className="historial-grid">
-          {historial.map((h) => (
+      <h3>Favoritos</h3>
+      {favorites.length ? (
+        <div className="favorite-container">
+          {favorites.map((fav) => (
             <MovieCard
-              key={h.imdbID}
-              movie={h}
-              onDetails={() => viewDetails(h.imdbID)}
-              onRemove={() => removeHistorial(h.imdbID)}
+              key={fav.imdbID}
+              movie={fav}
+              onDetails={() => viewDetails(fav.imdbID)}
+              onRemove={() => removeFavorite(fav.imdbID)}
             />
           ))}
         </div>
       ) : (
-        <p>No hay historial</p>
+        <p>No hay favoritos</p>
       )}
+
+   
     </div>
   );
 }
