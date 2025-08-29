@@ -120,14 +120,8 @@ function MovieCard({ movie, onFavorite, onHistorial, onDetails }) {
         </h5>
       </div>
       <div className="descripcion_button">
-        <button onClick={onHistorial}>
+        <button className="descripcion_card" onClick={onHistorial}>
           <i className="fa fa-binoculars" aria-hidden="true"></i>
-        </button>
-        <button onClick={onFavorite}>
-          <i className="fa fa-heart" aria-hidden="true"></i>
-        </button>
-        <button onClick={onDetails}>
-          <i className="fa fa-info-circle" aria-hidden="true"></i>
         </button>
       </div>
     </div>
