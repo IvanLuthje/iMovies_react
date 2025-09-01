@@ -3,8 +3,13 @@ import axios from "axios";
 
 const apiKey = "4526760c";
 
-export default function MoviesApp() {
+const Index = () => {
+  const [title, setTitle] = useState("");
+  const [filter, setFilter] = useState("movie");
   const [movies, setMovies] = useState([]);
+  const [results, setResults] = useState([]);
+  const [message, setMessage] = useState("");
+  
   const [favorites, setFavorites] = useState(
     JSON.parse(localStorage.getItem("favorites")) || []
   );
@@ -46,7 +51,7 @@ export default function MoviesApp() {
     localStorage.setItem("favorites_historial", JSON.stringify(historial));
   }, [historial]);
 
-  // 🔹 Funciones
+
   const addToFavorites = (movie) => {
     if (!favorites.some((fav) => fav.imdbID === movie.imdbID)) {
       setFavorites([...favorites, movie]);
@@ -59,12 +64,30 @@ export default function MoviesApp() {
     }
   };
 
-  const eliminarFav = (id) => {
-    setFavorites(favorites.filter((fav) => fav.imdbID !== id));
-  };
 
-  const eliminarHist = (id) => {
-    setHistorial(historial.filter((fav) => fav.imdbID !== id));
+  const handleSearch = async () => {
+    if (!title.trim()) {
+      setMessage("Debe ingresar un título para continuar");
+      return;
+    }
+
+    setLoading(true);
+    setResults([]);
+
+    try {
+      const url = `https://www.omdbapi.com/?s=${title}&type=${filter}&apikey=${apiKey}`;
+      const res = await axios.get(url);
+
+      if (res.data.Response === "True") {
+        setResults(res.data.Search);
+      } else {
+        setMessage(`⚠️ No se encontraron resultados para ${title}`);
+      }
+    } catch (err) {
+      setMessage("Error en la búsqueda: " + err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   // 🔹 Mostrar detalles con Axios (similar a tu mostrarDestacados)
@@ -75,7 +98,6 @@ export default function MoviesApp() {
       );
       if (res.data.Response === "True") {
         sessionStorage.setItem("data", JSON.stringify(res.data));
-        // Aquí podrías abrir un modal o redirigir
         window.location.href = "results.html";
       }
     } catch (err) {
@@ -84,11 +106,41 @@ export default function MoviesApp() {
   };
 
   return (
-    <div>
-      <h2>Películas del 2025</h2>
+    
+    <main>
+      <div className="search-bar">
+        <input className="id_nombre"
+          type="text"
+          placeholder="Escribe un título..."
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <button className="boton_busqueda" onClick={handleSearch}><i class="fa fa-search"></i></button>
+        <select className="id_nombre" value={filter} onChange={(e) => setFilter(e.target.value)}>
+          <option value="movie">Película</option>
+          <option value="series">Serie</option>
+          <option value="episode">Episodio</option>
+        </select>
+        
+      </div>
 
       {loading && <p><i className="fa-solid fa-spinner"></i> Cargando...</p>}
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {message && <p>{message}</p>}
+
+
+      <div className="movies-info">
+        {results.map((movie) => (
+          <MovieCard
+            key={movie.imdbID}
+            movie={movie}
+            onDetails={() => viewDetails(movie.imdbID)}
+            onFavorite={() => addToFavorites(movie)}
+            onHistorial={() => addToHistorial(movie)}
+          />
+        ))}
+      </div>
+
+      <h2>Películas del año</h2>
 
       <div className="movies-info">
         {movies.map((movie) => (
@@ -102,9 +154,24 @@ export default function MoviesApp() {
         ))}
       </div>
 
-    </div>
+    </main>
   );
 }
+
+  const viewDetails = async (id) => {
+    try {
+      const res = await axios.get(
+        `https://www.omdbapi.com/?i=${id}&apikey=${apiKey}&plot=full`
+      );
+      if (res.data.Response === "True") {
+        sessionStorage.setItem("data", JSON.stringify(res.data));
+        window.location.href = "results.html";
+      }
+    } catch (err) {
+      console.error("Error al obtener detalles", err.message);
+    }
+  };
+
 
 // 🔹 Componente para una película
 function MovieCard({ movie, onFavorite, onHistorial, onDetails }) {
@@ -127,3 +194,5 @@ function MovieCard({ movie, onFavorite, onHistorial, onDetails }) {
     </div>
   );
 }
+
+export default Index;

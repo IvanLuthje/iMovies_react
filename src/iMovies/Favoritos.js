@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, {useState} from "react";
 import axios from "axios";
 
 const apiKey = "4526760c";
 
-export default function Favoritos() {
-  const [title, setTitle] = useState("");
+const Favoritos = () => {
   const [favorites, setFavorites] = useState(
     JSON.parse(localStorage.getItem("favorites")) || []
   );
@@ -22,7 +21,7 @@ export default function Favoritos() {
       );
       if (res.data.Response === "True") {
         sessionStorage.setItem("data", JSON.stringify(res.data));
-        window.location.href = "results.html"; // 👉 o reemplazar por un modal SPA
+        window.location.href = "results.html";
       }
     } catch (err) {
       console.error("Error al obtener detalles", err.message);
@@ -30,7 +29,7 @@ export default function Favoritos() {
   };
 
   return (
-    <div>
+    <main>
 
       <h2>Favoritos</h2>
       {favorites.length ? (
@@ -49,7 +48,7 @@ export default function Favoritos() {
       )}
 
    
-    </div>
+    </main>
   );
 }
 
@@ -86,3 +85,5 @@ function MovieCard({ movie, onDetails, onFavorite, onHistorial, onRemove }) {
     </div>
   );
 }
+
+export default Favoritos;

@@ -20,21 +20,26 @@ const Contacto = () => {
   const zoom = 13; 
 
 
-  return (
-    <MapContainer center={position} zoom={zoom} style={{ height: '1080px', width: '100%' }}>
-      {/* TileLayer is the base map */}
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      />
-    
-      <Marker position={position} icon={icono}>
-        <Popup>
-            Acá estamos nosotros
-        </Popup>
-      </Marker>
-    </MapContainer>
 
+  return (
+    <main>
+        <h2>Contacto</h2>
+        <MapContainer center={position} zoom={zoom} style={{ height: '1080px', width: '100%' }}>
+        {/* TileLayer is the base map */}
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        />
+      
+        <Marker position={position} icon={icono}>
+          <Popup>
+              Acá estamos nosotros
+          </Popup>
+        </Marker>
+      </MapContainer>
+
+    </main>
+    
     
   );
 };
