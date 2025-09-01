@@ -173,8 +173,7 @@ const Index = () => {
   };
 
 
-// 🔹 Componente para una película
-function MovieCard({ movie, onFavorite, onHistorial, onDetails }) {
+function MovieCard({ movie, onFavorite, onHistorial, onDetails}) {
   const imagen = movie.Poster !== "N/A" ? movie.Poster : "img/Image-not-found.png";
 
   return (

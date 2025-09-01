@@ -90,7 +90,7 @@ const Historial = () => {
 
 function MovieCard({ movie, onDetails, onFavorite, onHistorial, onRemove }) {
   <h3>Resultados</h3>
-  const imagen = movie.Poster !== "N/A" ? movie.Poster : "img/Image-not-found.png";
+  const imagen = movie.Poster !== "N/A" ? movie.Poster : "../img/Image-not-found.png";
   return (
     <div className="movie-card">
       <img src={imagen} alt={movie.Title} />
