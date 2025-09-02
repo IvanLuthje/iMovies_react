@@ -13,7 +13,7 @@ const Results = () => {
     return <p>No hay datos de la película seleccionada.</p>;
   }
 
-  const imagen = data.Poster !== "N/A" ? data.Poster : "img/Image-not-found.png";
+  const imagen = data.Poster !== "N/A" ? data.Poster : "../img/Image-not-found.png";
 
   return (
     <main className="movie-detail">
